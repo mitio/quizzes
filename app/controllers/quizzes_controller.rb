@@ -3,33 +3,18 @@ class QuizzesController < ApplicationController
   # GET /quizzes.json
   def index
     @quizzes = Quiz.all
-
-    respond_to do |format|
-      format.html # index.html.erb
-      format.json { render json: @quizzes }
-    end
   end
 
   # GET /quizzes/1
   # GET /quizzes/1.json
   def show
     @quiz = Quiz.find(params[:id])
-
-    respond_to do |format|
-      format.html # show.html.erb
-      format.json { render json: @quiz }
-    end
   end
 
   # GET /quizzes/new
   # GET /quizzes/new.json
   def new
     @quiz = Quiz.new
-
-    respond_to do |format|
-      format.html # new.html.erb
-      format.json { render json: @quiz }
-    end
   end
 
   # GET /quizzes/1/edit
@@ -42,14 +27,10 @@ class QuizzesController < ApplicationController
   def create
     @quiz = Quiz.new(params[:quiz])
 
-    respond_to do |format|
-      if @quiz.save
-        format.html { redirect_to @quiz, notice: 'Quiz was successfully created.' }
-        format.json { render json: @quiz, status: :created, location: @quiz }
-      else
-        format.html { render action: "new" }
-        format.json { render json: @quiz.errors, status: :unprocessable_entity }
-      end
+    if @quiz.save
+      redirect_to @quiz, notice: 'Quiz was successfully created.'
+    else
+      render action: "new"
     end
   end
 
@@ -58,14 +39,10 @@ class QuizzesController < ApplicationController
   def update
     @quiz = Quiz.find(params[:id])
 
-    respond_to do |format|
-      if @quiz.update_attributes(params[:quiz])
-        format.html { redirect_to @quiz, notice: 'Quiz was successfully updated.' }
-        format.json { head :ok }
-      else
-        format.html { render action: "edit" }
-        format.json { render json: @quiz.errors, status: :unprocessable_entity }
-      end
+    if @quiz.update_attributes(params[:quiz])
+      redirect_to @quiz, notice: 'Quiz was successfully updated.'
+    else
+      render action: "edit"
     end
   end
 
@@ -75,9 +52,6 @@ class QuizzesController < ApplicationController
     @quiz = Quiz.find(params[:id])
     @quiz.destroy
 
-    respond_to do |format|
-      format.html { redirect_to quizzes_url }
-      format.json { head :ok }
-    end
+    redirect_to quizzes_url
   end
 end
