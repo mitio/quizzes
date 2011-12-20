@@ -1,6 +1,7 @@
 Quizzes::Application.routes.draw do
-  resources :questions
-  resources :quizzes
+  resources :quizzes do
+    resources :questions
+  end
 
   root to: 'quizzes#index'
 

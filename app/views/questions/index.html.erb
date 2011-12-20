@@ -13,13 +13,13 @@
   <tr>
     <td><%= question.title %></td>
     <td><%= question.position %></td>
-    <td><%= link_to 'Show', question %></td>
-    <td><%= link_to 'Edit', edit_question_path(question) %></td>
-    <td><%= link_to 'Destroy', question, confirm: 'Are you sure?', method: :delete %></td>
+    <td><%= link_to 'Show', quiz_question_path(@quiz, question) %></td>
+    <td><%= link_to 'Edit', edit_quiz_question_path(@quiz, question) %></td>
+    <td><%= link_to 'Destroy', quiz_question_path(@quiz, question), confirm: 'Are you sure?', method: :delete %></td>
   </tr>
 <% end %>
 </table>
 
 <br />
 
-<%= link_to 'New Question', new_question_path %>
+<%= link_to 'New Question', new_quiz_question_path(@quiz) %>
