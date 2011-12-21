@@ -17,7 +17,7 @@ To get this simple web app up and running, execute the following commands:
 
 Now you should be able to navigate to [http://localhost:3000/](http://localhost:3000/) and get on with it.
 
-The admin panel (supported by [Active Admin](http://activeadmin.info) is located at [http://localhost:3000/admin](http://localhost:3000/admin). The credentials to use are as follows:
+The admin panel (supported by [Active Admin](http://activeadmin.info)) is located at [http://localhost:3000/admin](http://localhost:3000/admin). The credentials to use are as follows:
 
 * Username: **admin@example.com**
 * Password: **password**
