@@ -2,14 +2,16 @@
 # See https://github.com/svenfuchs/rails-i18n/tree/master/rails%2Flocale for starting points.
 
 en:
-  hello: "Hello world"
   activerecord:
     models:
       question: Въпрос
+      quiz: Въпросник
     attributes:
       question:
         title: 'Заглавие'
         position: 'Позиция'
+      quiz:
+        name: Име
     errors:
       template:
         header:

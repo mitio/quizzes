@@ -3,10 +3,10 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <b>Name:</b>
+  <b><%= Quiz.human_attribute_name :name %>:</b>
   <%= @quiz.name %>
 </p>
 
 
-<%= link_to 'Edit', edit_quiz_path(@quiz) %> |
-<%= link_to 'Back', quizzes_path %>
+<%= link_to 'Редакция', edit_quiz_path(@quiz) %> |
+<%= link_to 'Обратно', quizzes_path %>
