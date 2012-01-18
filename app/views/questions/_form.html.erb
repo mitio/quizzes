@@ -1,15 +1,5 @@
 <%= form_for([@quiz, @question]) do |f| %>
-  <% if @question.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= t :'activerecord.errors.template.header', count: @question.errors.count, model: Question.model_name.human %></h2>
-
-      <ul>
-      <% @question.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
+  <%= errors_on @question %>
 
   <div class="field">
     <%= f.label :title %><br />
