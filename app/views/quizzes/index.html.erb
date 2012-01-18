@@ -13,9 +13,9 @@
     <td><%= quiz.id %></td>
     <td><%= quiz.name %></td>
     <td><%= link_to pluralize(quiz.questions.size, 'въпрос',  'въпроса'), quiz_questions_path(quiz) %></td>
-    <td><%= link_to 'Виж', quiz %></td>
+    <td><%= link_to 'Преглед', quiz %></td>
     <td><%= link_to 'Редактирай', edit_quiz_path(quiz) %></td>
-    <td><%= link_to 'Изтрий', quiz, confirm: 'Are you sure?', method: :delete %></td>
+    <td><%= link_to 'Изтриване', quiz, confirm: 'Моля, потвърдете изтриването на този елемент.', method: :delete %></td>
   </tr>
 <% end %>
 </table>

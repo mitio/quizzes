@@ -1,9 +1,9 @@
-<h1>Listing questions</h1>
+<h1>Списък с въпроси в <%= link_to @quiz.name, @quiz %></h1>
 
 <table>
   <tr>
-    <th>Title</th>
-    <th>Position</th>
+    <th><%= Question.human_attribute_name :title %></th>
+    <th><%= Question.human_attribute_name :position %></th>
     <th></th>
     <th></th>
     <th></th>
@@ -13,13 +13,13 @@
   <tr>
     <td><%= question.title %></td>
     <td><%= question.position %></td>
-    <td><%= link_to 'Show', quiz_question_path(@quiz, question) %></td>
-    <td><%= link_to 'Edit', edit_quiz_question_path(@quiz, question) %></td>
-    <td><%= link_to 'Destroy', quiz_question_path(@quiz, question), confirm: 'Are you sure?', method: :delete %></td>
+    <td><%= link_to 'Преглед', quiz_question_path(@quiz, question) %></td>
+    <td><%= link_to 'Редакция', edit_quiz_question_path(@quiz, question) %></td>
+    <td><%= link_to 'Изтриване', quiz_question_path(@quiz, question), confirm: 'Моля, потвърдете изтриването на този елемент.', method: :delete %></td>
   </tr>
 <% end %>
 </table>
 
 <br />
 
-<%= link_to 'New Question', new_quiz_question_path(@quiz) %>
+<%= link_to 'Нов въпрос', new_quiz_question_path(@quiz) %>
