@@ -3,3 +3,23 @@
 
 en:
   hello: "Hello world"
+  activerecord:
+    models:
+      question: Въпрос
+    attributes:
+      question:
+        title: 'Заглавие'
+        position: 'Позиция'
+    errors:
+      template:
+        header:
+          one:    "%{model}: запазването е неуспешно заради %{count} грешка"
+          other:  "%{model}: запазването е неуспешно заради %{count} грешки"
+        body: "Имаше проблем с следните полета:"
+  errors:
+    messages:
+      blank: e задължително поле
+      confirmation: не съвпада
+      taken: e заето
+      not_a_number: трябва да е число
+
