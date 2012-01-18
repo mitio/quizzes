@@ -1,15 +1,15 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <b>Title:</b>
+  <b><%= Question.human_attribute_name :title %>:</b>
   <%= @question.title %>
 </p>
 
 <p>
-  <b>Position:</b>
+  <b><%= Question.human_attribute_name :position %>:</b>
   <%= @question.position %>
 </p>
 
 
-<%= link_to 'Edit', edit_quiz_question_path(@quiz, @question) %> |
-<%= link_to 'Back', quiz_questions_path(@quiz) %>
+<%= link_to 'Редакция', edit_quiz_question_path(@quiz, @question) %> |
+<%= link_to 'Обратно', quiz_questions_path(@quiz) %>
