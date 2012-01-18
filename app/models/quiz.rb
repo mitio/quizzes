@@ -5,4 +5,7 @@ class Quiz < ActiveRecord::Base
   validates_uniqueness_of :name, :if => -> { name.present? }
 
   attr_accessible :name
+
+  scope :ordered, order('id ASC')
+  scope :approved, where(['id > ?', 3])
 end
